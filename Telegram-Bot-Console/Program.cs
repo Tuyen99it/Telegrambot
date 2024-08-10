@@ -1,39 +1,4 @@
-1. Hello world
-
-
-using Telegram.Bot;
-var bot = new TelegramBotClient("7036643521:AAEOtfcW88mPumpSzrhnpL1ybujhpqpHkVM");
-var me = await bot.GetMeAsync();
-Console.WriteLine($" Bot-Id:{me.Id} - Name bot:{me.FirstName}");
-
-
-2. First Chat bot
-
-
-using Telegram.Bot;
-using Telegram.Bot.Types;
-using Telegram.Bot.Types.Enums;
-
-using var cts = new CancellationTokenSource();
-var bot = new TelegramBotClient("7036643521:AAEOtfcW88mPumpSzrhnpL1ybujhpqpHkVM", cancellationToken: cts.Token);
-var me = await bot.GetMeAsync();
-bot.OnMessage += OnMessage;
-
-Console.WriteLine($"{me.FirstName} is runing... Press Enter to terminate");
-Console.ReadKey();
-cts.Cancel();
-// handle message received by bot
-async Task OnMessage(Message msg, UpdateType type)
-{
-    if (msg.Text is null) return;// only handle Text message, if not text break out
-    Console.WriteLine($"Received Type: {type} message text: {msg.Text} in {msg.Chat}");
-    // let's echo message received to the chat
-    await bot.SendTextMessageAsync(msg.Chat, $"{msg.From} said: {msg.Text}");
-
-}
-
-3. Full Example
-using Telegram.Bot;
+﻿using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Polling;

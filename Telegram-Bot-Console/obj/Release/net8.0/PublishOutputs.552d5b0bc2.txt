@@ -1,0 +1,6 @@
+C:\Users\Nguyen Tuyen\c#\Telegram-Bot\Telegram-Bot-Console\bin\Release\net8.0\publish\Telegram-Bot-Console.exe
+C:\Users\Nguyen Tuyen\c#\Telegram-Bot\Telegram-Bot-Console\bin\Release\net8.0\publish\Telegram-Bot-Console.dll
+C:\Users\Nguyen Tuyen\c#\Telegram-Bot\Telegram-Bot-Console\bin\Release\net8.0\publish\Telegram-Bot-Console.deps.json
+C:\Users\Nguyen Tuyen\c#\Telegram-Bot\Telegram-Bot-Console\bin\Release\net8.0\publish\Telegram-Bot-Console.runtimeconfig.json
+C:\Users\Nguyen Tuyen\c#\Telegram-Bot\Telegram-Bot-Console\bin\Release\net8.0\publish\Telegram-Bot-Console.pdb
+C:\Users\Nguyen Tuyen\c#\Telegram-Bot\Telegram-Bot-Console\bin\Release\net8.0\publish\Telegram.Bot.dll
