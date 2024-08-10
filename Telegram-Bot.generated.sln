@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telegram-Bot-Console", "Telegram-Bot-Console\Telegram-Bot-Console.csproj", "{083242F8-DF53-49B7-9D9C-6C7204893981}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telegram-Bot-Console", "Telegram-Bot-Console\Telegram-Bot-Console.csproj", "{F1E6D828-67C1-4D10-8553-BCF276217E52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{083242F8-DF53-49B7-9D9C-6C7204893981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{083242F8-DF53-49B7-9D9C-6C7204893981}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{083242F8-DF53-49B7-9D9C-6C7204893981}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{083242F8-DF53-49B7-9D9C-6C7204893981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1E6D828-67C1-4D10-8553-BCF276217E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1E6D828-67C1-4D10-8553-BCF276217E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1E6D828-67C1-4D10-8553-BCF276217E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1E6D828-67C1-4D10-8553-BCF276217E52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
