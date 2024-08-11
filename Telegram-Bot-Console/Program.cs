@@ -26,7 +26,41 @@ async Task OnMessage(Message msg, UpdateType type)
     {
         await bot.SendTextMessageAsync(msg.Chat, "Welcome, Pick one direction", replyMarkup: new InlineKeyboardMarkup().AddButtons("Left", "Right"));
     }
+    else
 
+    {
+
+        var message = await bot.SendTextMessageAsync(msg.Chat, "Trying <b> all the parameters </b> of sendingMessage method",
+                                             parseMode: ParseMode.Html,
+                                             protectContent: true,
+                                             replyParameters: msg.MessageId,
+                                             replyMarkup: new InlineKeyboardMarkup(
+                                                InlineKeyboardButton.WithUrl("Check sendMessage method", "https://core.telegram.org/bots/api#sendmessage")
+                                             )
+
+                                             );
+        var inlineMarkup = new InlineKeyboardMarkup()
+                                .AddButton(InlineKeyboardButton.WithSwitchInlineQuery("switch_inline_query"))
+                                .AddButton(InlineKeyboardButton.WithSwitchInlineQueryCurrentChat("switch_inline_query_current_chat"));
+
+        var sent = await bot.SendTextMessageAsync(msg.Chat, "A message with an inline keyboard markup",
+            replyMarkup: inlineMarkup);
+
+
+        if (msg.ReplyToMessage == null && msg.Entities == null)
+        {
+            Console.WriteLine("anything is null");
+            return;
+        }
+
+        Console.WriteLine(
+                            $"{me.FirstName} sent message {msg.MessageId} " +
+                            $"to chat {msg.Chat.Id} at {msg.Date.ToLocalTime()}. " +
+                            $"It is a reply to message {msg.ReplyToMessage!.MessageId} " +
+                            $"and has {msg.Entities!.Length} message entities.");
+
+
+    }
 }
 // handle other types of updates received by bot
 async Task OnUpdate(Update update)

@@ -72,3 +72,49 @@ async Task OnUpdate(Update update)
         await bot.SendTextMessageAsync(query.Message!.Chat, $"User {query.From} clicked on {query.Data}");
     }
 }
+4. Send Text Message
+ // handle message received by bot
+async Task OnMessage(Message msg, UpdateType type)
+{
+    if (msg.Text == "/start")
+    {
+        await bot.SendTextMessageAsync(msg.Chat, "Welcome, Pick one direction", replyMarkup: new InlineKeyboardMarkup().AddButtons("Left", "Right"));
+    }
+    else
+
+    {
+
+        var message = await bot.SendTextMessageAsync(msg.Chat, "Trying <b> all the parameters </b> of sendingMessage method",
+                                             parseMode: ParseMode.Html,
+                                             protectContent: true,
+                                             replyParameters: msg.MessageId,
+                                             replyMarkup: new InlineKeyboardMarkup(
+                                                InlineKeyboardButton.WithUrl("Check sendMessage method", "https://core.telegram.org/bots/api#sendmessage")
+                                             )
+
+                                             );
+
+        if (msg.ReplyToMessage == null && msg.Entities == null)
+        {
+            Console.WriteLine("anything is null");
+            return;
+        }
+
+        Console.WriteLine(
+                            $"{me.FirstName} sent message {msg.MessageId} " +
+                            $"to chat {msg.Chat.Id} at {msg.Date.ToLocalTime()}. " +
+                            $"It is a reply to message {msg.ReplyToMessage!.MessageId} " +
+                            $"and has {msg.Entities!.Length} message entities.");
+
+
+    }
+}
+// handle other types of updates received by bot
+async Task OnUpdate(Update update)
+{
+    if (update is { CallbackQuery: { } query })// non null callback query
+    {
+        await bot.AnswerCallbackQueryAsync(query.Id, $"You pick {query.Data}");
+        await bot.SendTextMessageAsync(query.Message!.Chat, $"User {query.From} clicked on {query.Data}");
+    }
+}
