@@ -67,13 +67,13 @@ async Task OnCommand(string command, string args, Message message)
     Console.WriteLine($"Received command:{command} {args}");
     switch (command)
     {
-        case "/start": await StartCommand(message); break;
-        case "/photo": await PhotoCommand(args, message); break;
-        case "/inline_button": await InlineButtonCommand(message); break;
-        case "/keyboard": await KeyboardCommand(message); break;
-        case "/remove": await RemoveCommand(message); break;
-        case "/poll": await PollCommand(message); break;
-        case "/reaction": await ReactionCommand(message); break;
+        case "/start": Console.WriteLine(command); await StartCommand(message); ; break;
+        case "/photo": Console.WriteLine(command); await PhotoCommand(args, message); break;
+        case "/inline_buttons": Console.WriteLine(command); await InlineButtonCommand(message); break;
+        case "/keyboard": Console.WriteLine(command); await KeyboardCommand(message); break;
+        case "/remove": Console.WriteLine(command); await RemoveCommand(message); break;
+        case "/poll": Console.WriteLine(command); await PollCommand(message); break;
+        case "/reaction": Console.WriteLine(command); await ReactionCommand(message); break;
     }
 }
 

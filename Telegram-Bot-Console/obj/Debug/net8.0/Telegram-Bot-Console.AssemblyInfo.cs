@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Telegram-Bot-Console")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a1621dcd87bdf47f82447598243a0cd16656c841")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+052b49d07161163ef3cd82ef43287930a9ad6f6f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Telegram-Bot-Console")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Telegram-Bot-Console")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

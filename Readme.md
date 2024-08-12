@@ -399,3 +399,50 @@ Console.WriteLine(update.Message.ForwardOrigin switch
     MessageOriginChat moch       => $"Forwarded on behalf of {moch.SenderChat}",
     _                            => "Not forwarded"
 });
+3. Intermediate
+3.1 Working with Updates and Message
+- There are 2 ways of receiving updates. The long polling using getUpdates method or Webhook
+- Telegram is querying Updates until the bot receives them ether way, but they will not be kept longer than 24h.
++ Long polling: Telegram is actively a blocking way, The call returns if updates become available or time out is expired.
++ Webhook: means you supplying Telegram with a local in the form of an URL, on which your bot listens for updates. Telegram need to able connet and post updates to that Url.
+ 3.1.1 Update types
+ - Each user interaction with your bot results in an Update object. It could be about a message, some changed status or bot specific query...
+ - Use update.Type to check which kind of update you are dealing with. However this property is slow and just indicate which fields of update is set, and other fields are all null.
+ It is recommended to instead directly test the fields of Update you want if they are not null
+
+ switch(update){
+    case {Message: {} msg}: await HandleMessage(msg);break;
+    case {EditedMessage: {} editmsg}: await HandleEditMessage(editmsg); break;
+    case {ChannelPost:{} channelMsg}: await HandleChannelMessage(channelMsg); break;
+    case {CallbackQuery:{} cbQuery}: await HandleCallbackQuery(cbQuery); break;
+ }
+3.1.2 Message types
+- Message is one of update types. And itseft contained various types.
+- We can use Message.Type to determind the type but it is recommended to directly test the non-null fields of Message using if or switch.
+- Message types are grouped become 2 main categories: Content and Service message.
+3.1.2.1 Content message
+- These messages represent some actual content that someone posted.
+Depending on which field is set, it can be:
++ Text: a basic text message (with its Entities for font effects, and LinkPreviewOptions for preview info)
++ Photo, Video, Animation (GIF), Document (file), Audio, Voice, PaidMedia: those are media contents which can come with a Caption subtext (and its CaptionEntities)
++ VideoNote, Sticker, Dice, Game, Poll, Venue, Location, Story: other kind of messages without a caption
+- You can use methods message.ToHtml() or message.ToMarkdown() to convert the text/caption & entities into HTML (recommended) or Markdown.
+3.1.2.2 Service message
+- All other message types represent some action/status that happened in the chat instead of actual content.
+- We are not listing all types here, but it could be for example:
++ members joined/left
++ pinned message
++ chat info/status/topic changed
++ payment/passport/giveaway process update
++ etc...
+3.1.2.3 Common properties
+- There are additional properties that gives you information about the context of the message.
+- Here are a few important properties:
++ MessageId: the ID that you will use if you need to reply or call a method acting on this message
++ Chat: in which chat the message arrived
++ From: which user posted it
++ Date: timestamp of the message (in UTC)
++ ReplyToMessage: which message this is a reply to
++ ForwardOrigin: if it is a Forwarded message
++ MediaGroupId: albums (group of media) are separate consecutive messages having the same MediaGroupId
++ MessageThreadId: the topic ID for Forum/Topic type chats
