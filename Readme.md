@@ -446,3 +446,4 @@ Depending on which field is set, it can be:
 + ForwardOrigin: if it is a Forwarded message
 + MediaGroupId: albums (group of media) are separate consecutive messages having the same MediaGroupId
 + MessageThreadId: the topic ID for Forum/Topic type chats
+3.1.3 Example project
