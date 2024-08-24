@@ -26,7 +26,7 @@ public abstract class ReceiverServiceBase<TUpdateHandler> : IReceiverService whe
     /// <param name="stoppingToken"></param>
     /// <returns></returns>
 
-    public async Task ReceiverAsync(CancellationToken stoppingToken)
+    public async Task ReceiveAsync(CancellationToken stoppingToken)
     {
         //TODO: We can inject ReceiverOptions through IOption Container
         var receiverOptions = new ReceiverOptions()

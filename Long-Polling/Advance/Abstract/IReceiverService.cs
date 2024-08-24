@@ -4,5 +4,5 @@ namespace Advance.Abstract;
 ///</summary>
 public interface IReceiverService
 {
-    Task ReceiverAsync(CancellationToken stoppingToken);
+    Task ReceiveAsync(CancellationToken stoppingToken);
 }
